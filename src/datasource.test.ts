@@ -22,3 +22,8 @@ test('range gets converted into unix epoch notation', () => {
   expect(replaceMacros('$__unixEpochFrom()', range)).toStrictEqual('1621284489');
   expect(replaceMacros('$__unixEpochTo()', range)).toStrictEqual('1621284623');
 });
+
+test('range gets converted into unix milliseconds epoch notation', () => {
+  expect(replaceMacros('$__unixEpochMilliFrom()', range)).toStrictEqual('1621284489000');
+  expect(replaceMacros('$__unixEpochMilliTo()', range)).toStrictEqual('1621284623000');
+});

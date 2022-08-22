@@ -156,6 +156,8 @@ export class JsonDataSource extends DataSourceApi<JsonApiQuery, JsonApiDataSourc
             if (range) {
               bindings['__unixEpochFrom'] = range.from.valueOf();
               bindings['__unixEpochTo'] = range.to.valueOf();
+              bindings['__unixEpochMilliFrom'] = range.from.valueOf()*1000;
+              bindings['__unixEpochMilliTo'] = range.to.valueOf()*1000;
               bindings['__isoFrom'] = range.from.toISOString();
               bindings['__isoTo'] = range.to.toISOString();
             }
